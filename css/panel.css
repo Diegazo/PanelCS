@@ -1,0 +1,77 @@
+/* Cuerpo de la página */
+/* ------------------- */
+
+body{margin:0;	font-family:Helvetica, Arial; font-size:12pt;}
+img{border:0;margin:0;}
+#clr, div.clr,div.clear{clear:both;}
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+#page {
+    margin: auto;
+    width: 940px;
+    padding: 5px 0px 10px 0px;
+}
+
+#header{    
+    height: 90px;
+    background-color: #E6F5DF;
+}
+
+#header_logo {
+    float:left;
+    margin-left: 80px;
+}
+
+#header_titulo {
+    padding-top: 15px;
+    font-size: 42px;
+    margin-left: 220px;
+}
+
+#nav {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 40px;
+}
+
+#nav ul {
+    
+}
+
+#nav ul li {
+    list-style: none;
+    float: left;
+    margin-left: 20px;
+}
+
+/*Zona interna */
+
+#article {
+    margin-top: 50px;
+}
+
+/*Zona de equipos*/
+
+#equipos_liga_masculina {
+    float: left;
+    margin-left: 20px;
+}
+
+#equipos_liga_femenina {
+    float:right;
+    margin-right: 50px;
+}
+
+#boton_guardar_nombres_equipos {
+    margin-left: 50px;
+}
+
+
+/*Footer*/
+#footer {
+    margin-top: 50px;
+    height: 40px;
+    background-color: #000000;
+    color: #FFFFFF;
+}
