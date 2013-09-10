@@ -67,6 +67,33 @@ a:hover{text-decoration:underline;}
     margin-left: 50px;
 }
 
+/*Zona de próximo partido*/
+
+#proximo_partido_masculino {
+    float: left;
+    margin-left: 20px;
+}
+
+#proximo_partido_femenino {
+    float:right;
+    margin-right: 50px;
+}
+
+#boton_guardar_proximo_partido {
+    margin-left: 50px;
+}
+
+.tabla_proximo_partido {    
+    margin: 20px 0px 20px 0px;
+}
+
+.tabla_proximo_partido tr td {    
+    padding-bottom: 10px;
+}
+
+.tabla_proximo_partido tr td label {    
+    margin-right: 20px;
+}
 
 /*Footer*/
 #footer {

@@ -7,6 +7,7 @@
         $keywords= "Panel de control";
         $description = "Panel de control de la app de Android";
     
+    include ('head.php');
     include ('header.php');        
     
 ?>

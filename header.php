@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html lang="es-ES">
-<head>
-	<title><?php echo $tituloPagina;?></title>
-        
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="<?php echo @$keywords;?>" />
-	<meta name="description" content="<?php echo @$description;?>" />
-	        
-        <!-- <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />       -->
-        
- 	<link rel="stylesheet" href="css/panel.css" type="text/css" media="screen" />        
-        
- </head>
+<!-- Cierre de head por si se ha añadido código jQuery -->
+</head>
 <body>
 
             
@@ -37,8 +25,8 @@
         <ul>
             <li><a href="index.php">Inicio</a></li>
             <li><a href="equipos.php">Equipos</a></li>
-            <li>Próximo partido</li>
-            <li>Jornada</li>
+            <li><a href="proximopartido.php">Próximo partido</a></li>
+            <li><a href="jornada.php">Jornada</a></li>
             <li>Clasificación</li>
             <li>Temporada</li>
             <li>Libros</li>
