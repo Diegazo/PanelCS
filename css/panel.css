@@ -95,6 +95,22 @@ a:hover{text-decoration:underline;}
     margin-right: 20px;
 }
 
+/*Zona clasificacion*/
+#clasificacion_liga_masculina {
+    float: left;
+    margin-left: 20px;
+}
+
+#clasificacion_liga_femenina {
+    float:right;
+    margin-right: 50px;
+}
+
+#boton_guardar_clasificacion {
+    margin-left: 50px;
+}
+
+
 /*Footer*/
 #footer {
     margin-top: 50px;

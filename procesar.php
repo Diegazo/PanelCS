@@ -69,6 +69,33 @@ if ($_POST['pagina'] == "jornada.php"){
 
 }
 
+if ($_POST['pagina'] == "clasificacion.php"){
+ 
+    $contador = 1;
+
+    for ($contador; $contador <= 12; $contador++){
+        $nombre=$_POST['nombre_mas_'.$contador];
+        $pj=$_POST['pj_mas_'.$contador];
+        $pg=$_POST['pg_mas_'.$contador];
+        $pp=$_POST['pp_mas_'.$contador];
+        $puntos=$_POST['puntos_mas_'.$contador];
+        $res = mysql_query("UPDATE clasificacion SET nombre='$nombre',partidosJugados='$pj',partidosGanados='$pg',partidosPerdidos='$pp',puntos='$puntos' WHERE ID='$contador'");
+    }   
+    
+    $contador = 1;
+
+    for ($contador; $contador <= 12; $contador++){
+        $nombre=$_POST['nombre_fem_'.$contador];
+        $pj=$_POST['pj_fem_'.$contador];
+        $pg=$_POST['pg_fem_'.$contador];
+        $pp=$_POST['pp_fem_'.$contador];
+        $puntos=$_POST['puntos_fem_'.$contador];
+        $res = mysql_query("UPDATE clasificacionFemenino SET nombre='$nombre',partidosJugados='$pj',partidosGanados='$pg',partidosPerdidos='$pp',puntos='$puntos' WHERE ID='$contador'");
+    }   
+    
+
+}
+
 mysql_close();
 
 if($res == true){

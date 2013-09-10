@@ -27,7 +27,7 @@
             <li><a href="equipos.php">Equipos</a></li>
             <li><a href="proximopartido.php">Próximo partido</a></li>
             <li><a href="jornada.php">Jornada</a></li>
-            <li>Clasificación</li>
+            <li><a href="clasificacion.php">Clasificación</a></li>
             <li>Temporada</li>
             <li>Libros</li>
         </ul>
