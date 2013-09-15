@@ -2,6 +2,7 @@
 <html lang="es-ES">
 <head>
 	<title><?php echo $tituloPagina;?></title>
+   
         
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="<?php echo @$keywords;?>" />

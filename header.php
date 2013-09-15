@@ -28,8 +28,8 @@
             <li><a href="proximopartido.php">Próximo partido</a></li>
             <li><a href="jornada.php">Jornada</a></li>
             <li><a href="clasificacion.php">Clasificación</a></li>
-            <li>Temporada</li>
-            <li>Libros</li>
+            <li><a href="temporada.php">Temporada</a></li>
+            <li><a href="clublectura.php">Libros</a></li>
         </ul>
         
     </div>

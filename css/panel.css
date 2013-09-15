@@ -110,6 +110,37 @@ a:hover{text-decoration:underline;}
     margin-left: 50px;
 }
 
+/*Zona temporada*/
+#temporada_liga_masculina {
+    margin-top: 50px;
+}
+
+#temporada_liga_femenina {
+    margin-top: 50px;
+}
+
+.tabla_temporada{
+    margin: 25px 0px 15px 0px;
+}
+
+
+/*Zona libros*/
+
+#añadir_libro {
+    margin: 10px 0px 30px 0px;
+}
+
+.ficha_libro_izquierda {
+    float: left;
+}
+
+.ficha_libro_derecha {
+    float: right;
+}
+
+#lista_libros {
+    margin: 10px 0px 30px 0px;
+}
 
 /*Footer*/
 #footer {

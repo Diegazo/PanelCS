@@ -2,10 +2,10 @@
 
 $con = mysql_connect("diegazo.es", "diegazoe_csan", "otraPRUEBA#") or die('Error en conexion a la DB');
 mysql_select_db("diegazoe_csAndroid", $con) or die('Error al seleccionar la DB');
+mysql_query( 'SET NAMES utf8' , $con);
 
 
-
-if ($_POST['pagina'] == "equipos.php"){
+if ($_POST['pagina'] == "equipos.php"){ 
  
     $contador = 1;
 
@@ -96,15 +96,125 @@ if ($_POST['pagina'] == "clasificacion.php"){
 
 }
 
+if ($_POST['pagina'] == "temporada.php"){
+ 
+    if ($_POST['accion'] == "editar"){    
+    
+        $id=$_POST['id'];
+        $nombre_local=$_POST['nombre_local'];
+        $puntos_local=$_POST['puntos_local'];        
+        $nombre_visitante=$_POST['nombre_visitante'];
+        $puntos_visitante=$_POST['puntos_visitante'];
+        $tipo=$_POST['tipo'];
+        $fecha=$_POST['fecha'];
+        $url=$_POST['url'];
+        
+        if ($_POST['genero'] == "masculino"){  
+            $res = mysql_query("UPDATE historicoTemporada 
+                                SET nombreLocal='$nombre_local',puntosLocal='$puntos_local',nombreVisitante='$nombre_visitante',puntosVisitante='$puntos_visitante',tipo='$tipo',fecha='$fecha',url='$url'   
+                                WHERE ID='$id'");
+        }
+        
+        if ($_POST['genero'] == "femenino"){  
+            $res = mysql_query("UPDATE historicoTemporadaFemenino
+                                SET nombreLocal='$nombre_local',puntosLocal='$puntos_local',nombreVisitante='$nombre_visitante',puntosVisitante='$puntos_visitante',tipo='$tipo',fecha='$fecha',url='$url'   
+                                WHERE ID='$id'");
+        }
+    }      
+    
+    if ($_POST['accion'] == "borrar"){    
+    
+        $id=$_POST['id'];        
+        
+        if ($_POST['genero'] == "masculino"){  
+            $res = mysql_query("DELETE FROM historicoTemporada
+                                WHERE ID='$id'");
+        }
+        
+        if ($_POST['genero'] == "femenino"){  
+            $res = mysql_query("DELETE FROM historicoTemporadaFemenino
+                                WHERE ID='$id'");
+        }
+    }
+    
+    if ($_POST['accion'] == "nuevo"){    
+    
+        $nombre_local=$_POST['nombre_local'];
+        $puntos_local=$_POST['puntos_local'];        
+        $nombre_visitante=$_POST['nombre_visitante'];
+        $puntos_visitante=$_POST['puntos_visitante'];
+        $tipo=$_POST['tipo'];
+        $fecha=$_POST['fecha'];
+        $url=$_POST['url']; 
+        
+        if ($_POST['genero'] == "masculino"){  
+            $res = mysql_query("INSERT INTO historicoTemporada
+                                (nombreLocal,puntosLocal,nombreVisitante,puntosVisitante,tipo,fecha,url)
+                                VALUES
+                                ('$nombre_local','$puntos_local','$nombre_visitante','$puntos_visitante','$tipo','$fecha','$url')");
+        }
+        
+        if ($_POST['genero'] == "femenino"){  
+            $res = mysql_query("INSERT INTO historicoTemporadaFemenino
+                                (nombreLocal,puntosLocal,nombreVisitante,puntosVisitante,tipo,fecha,url)
+                                VALUES
+                                ('$nombre_local','$puntos_local','$nombre_visitante','$puntos_visitante','$tipo','$fecha','$url')");
+        }
+    }
+    
+}
+
+if ($_POST['pagina'] == "clublectura.php"){
+ 
+    if ($_POST['accion'] == "nuevo"){    
+    
+        $titulo=$_POST['titulo'];
+        $autor=$_POST['autor'];        
+        $fecha=$_POST['fecha'];
+        $hora=$_POST['hora'];
+        $lugar=$_POST['lugar'];
+        $resumen=$_POST['resumen'];        
+        
+        $res = mysql_query("INSERT INTO clubLectura
+                            (libro,autor,fecha,hora,lugar,resumen)
+                            VALUES ('$titulo','$autor','$fecha','$hora','$lugar','$resumen')");
+        
+    }
+    
+    if ($_POST['accion'] == "editar"){    
+    
+        $titulo=$_POST['titulo'];
+        $autor=$_POST['autor'];        
+        $fecha=$_POST['fecha'];
+        $hora=$_POST['hora'];
+        $lugar=$_POST['lugar'];
+        $resumen=$_POST['resumen'];
+        $id=$_POST['posicion'];
+        
+        $res = mysql_query("UPDATE clubLectura
+                            SET libro='$titulo',autor='$autor',fecha='$fecha',hora='$hora',lugar='$lugar',resumen='$resumen'
+                            WHERE ID='$id'");        
+    }
+    
+    if ($_POST['accion'] == "borrar"){    
+    
+        $id=$_POST['posicion'];
+        
+        $res = mysql_query("DELETE FROM clubLectura
+                                WHERE ID='$id'");
+       
+    }
+}
+
 mysql_close();
 
 if($res == true){
-    
-	echo "1";
+
+        echo "1";
 }
 else{
-    
-	echo "0";
+
+        echo "0";
 }
 
 

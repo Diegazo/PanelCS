@@ -2,10 +2,6 @@
 
  /* FUNCIONES VINCULADAS AL MANEJO DE LAS BASES DE DATOS */
 
-
-        /*function db_return_contenido($contenido){
-            return mysql_fetch_array(mysql_query("SELECT * from contenido WHERE id='$contenido'",$GLOBALS["conexionglobal"]));
-        }*/      
         
         function db_return_equipos_masculino(){
             return mysql_query("SELECT * from equipos ORDER BY ID ASC",$GLOBALS["conexionglobal"]);
@@ -53,6 +49,18 @@
         
         function db_maximo_equipos_femenino(){
             return mysql_fetch_array(mysql_query("SELECT * from inicioYOpciones WHERE variable = 'web_equipos_fem' LIMIT 1",$GLOBALS["conexionglobal"]));
+        }
+        
+        function db_return_historico_masculino(){
+            return mysql_query("SELECT * from historicoTemporada ORDER BY ID ASC",$GLOBALS["conexionglobal"]);
+        }
+        
+        function db_return_historico_femenino(){
+            return mysql_query("SELECT * from historicoTemporadaFemenino ORDER BY ID ASC",$GLOBALS["conexionglobal"]);
+        }
+        
+        function db_return_listado_libros(){
+            return mysql_query("SELECT * from clubLectura ORDER BY ID ASC",$GLOBALS["conexionglobal"]);
         }
         
 ?>

@@ -214,9 +214,7 @@
                                            <option value="<?php echo $lista_equipos_masculino[$contador_item_masculino-1]["Nombre"];?>" 
                                            <?php if ($lista_equipos_masculino[$contador_item_masculino-1]["Nombre"] == $lista_clasificacion_masculino[$contador_equipos_masculino-1]["nombre"]) echo "selected"; ?>>     
                                                 <?php echo $lista_equipos_masculino[$contador_item_masculino-1]["Nombre"];?>                                      
-                                           </option>
-                                           alert("<?php echo $lista_equipos_masculino[$contador_item_masculino-1]["Nombre"]?>");
-                                           alert("<?php echo $lista_clasificacion_masculino[$contador_equipos_masculino-1]["nombre"]?>");
+                                           </option>                                           
                                      <?php
                                          $contador_item_masculino++;
                                          endwhile;
