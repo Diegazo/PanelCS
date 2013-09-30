@@ -206,6 +206,24 @@ if ($_POST['pagina'] == "clublectura.php"){
     }
 }
 
+if ($_POST['pagina'] == "index.php"){ 
+ 
+    $contador = 1;
+    $contador_array = 0;
+    
+    $valor = array($_POST['mensaje'],
+                   $_POST['jornada_m'],$_POST['jornada_f'],
+                   $_POST['clasificacion_m'],$_POST['clasificacion_f'],
+                   $_POST['partidos_jornada_m'],$_POST['partidos_jornada_f'],
+                   $_POST['equipos_liga_m'],$_POST['equipos_liga_f']);
+
+    for ($contador; $contador <= 9; $contador++){        
+        $res = mysql_query("UPDATE inicioYOpciones SET valor='$valor[$contador_array]' WHERE ID='$contador'");
+        $contador_array++;
+    }
+    
+}
+
 mysql_close();
 
 if($res == true){

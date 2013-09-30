@@ -2,6 +2,9 @@
 
  /* FUNCIONES VINCULADAS AL MANEJO DE LAS BASES DE DATOS */
 
+        function db_return_opciones(){
+            return mysql_query("SELECT * from inicioYOpciones ORDER BY ID ASC",$GLOBALS["conexionglobal"]);
+        }        
         
         function db_return_equipos_masculino(){
             return mysql_query("SELECT * from equipos ORDER BY ID ASC",$GLOBALS["conexionglobal"]);
