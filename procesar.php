@@ -1,8 +1,6 @@
 <?php
 
-$con = mysql_connect("diegazo.es", "diegazoe_csan", "otraPRUEBA#") or die('Error en conexion a la DB');
-mysql_select_db("diegazoe_csAndroid", $con) or die('Error al seleccionar la DB');
-mysql_query( 'SET NAMES utf8' , $con);
+include("conexion.php");
 
 
 if ($_POST['pagina'] == "equipos.php"){ 
