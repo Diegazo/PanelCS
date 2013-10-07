@@ -476,16 +476,16 @@ include("conexion.php");
     
     
 
-mysql_close();
+    mysql_close();
 
-if($res == true){
+    if($res == true){
 
-        echo "1";
-}
-else{
+            echo "1";
+    }
+    else{
 
-        echo "0";
-}
+            echo "0";
+    }
 
 
 
