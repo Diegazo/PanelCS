@@ -81,6 +81,22 @@
 						}
 					});
                                 });
+                                
+                                $('#clublectura_generar_xml').click(function(){  
+                                    
+                                        jQuery.post("procesar.php", {                         		                                                
+                                                
+                                                pagina:"xml",
+                                                accion:"generar_libros",
+					}, function(data, textStatus){
+						if(data == 1){
+                                                        alert("XML actualizado");							
+						}
+						else{
+							alert("ERROR mientras se creaba el XML");                                                        
+						}
+					});
+                                });
 			});
 		</script>
     
@@ -208,5 +224,7 @@
 
 <div class="clr"></div>
 
+<button id="clublectura_ver_xml" type="button" onclick="window.open('http://castraservilia.com/android/xml/clubLectura.xml')" target="_blank">Ver el xml</button>
+<button id="clublectura_generar_xml" type="button">Generar el xml</button>
 
 <?php include ('footer.php'); ?>

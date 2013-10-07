@@ -56,6 +56,22 @@
 						}
 					});
 				});
+                                
+                                $('#pp_generar_xml').click(function(){  
+                                    
+                                        jQuery.post("procesar.php", {                         		                                                
+                                                
+                                                pagina:"xml",
+                                                accion:"generar_proximo_partido",
+					}, function(data, textStatus){
+						if(data == 1){
+                                                        alert("XML actualizado");							
+						}
+						else{
+							alert("ERROR mientras se creaba el XML");                                                        
+						}
+					});
+                                });
 			});
 		</script>
     
@@ -186,5 +202,8 @@
 <div class="clr"></div>
 
 <button id="boton_guardar_proximo_partido" type="button">Guardar</button>
+<button id="pp_ver_xml_mas" type="button" onclick="window.open('http://castraservilia.com/android/xml/partidosmasculino.xml')" target="_blank">Ver el xml masculino</button>
+<button id="pp_ver_xml_fem" type="button" onclick="window.open('http://castraservilia.com/android/xml/partidosfemenino.xml')" target="_blank">Ver el xml femenino</button>
+<button id="pp_generar_xml" type="button">Generar el xml</button>
 
 <?php include ('footer.php'); ?>

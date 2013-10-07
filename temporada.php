@@ -115,6 +115,22 @@
 						}
 					});
                                 });
+                                
+                                $('#temporada_generar_xml').click(function(){  
+                                    
+                                        jQuery.post("procesar.php", {                         		                                                
+                                                
+                                                pagina:"xml",
+                                                accion:"generar_temporada",
+					}, function(data, textStatus){
+						if(data == 1){
+                                                        alert("XML actualizado");							
+						}
+						else{
+							alert("ERROR mientras se creaba el XML");                                                        
+						}
+					});
+                                });
 			});
 		</script>
     
@@ -164,7 +180,7 @@
                         </td>
                         <td>
                            <select id="tipo"> 
-                                <option value="no">Descanso veraniego</option>
+                                <option value="no">Sin tipo</option>
                                 <option value="amistoso">Amistoso</option>
                                 <option value="pretemporada">Pretemporada</option>
                                 <option value="temporada">Temporada</option>
@@ -235,7 +251,7 @@
                             </td>
                             <td>
                                <select id="tipo_masculino_<?php echo $contador_equipos_masculino;?>"> 
-                                    <option value="no" <?php if ($partido["tipo"] == "no") echo "selected"; ?>>Descanso veraniego</option>
+                                    <option value="no" <?php if ($partido["tipo"] == "no") echo "selected"; ?>>Sin tipo</option>
                                     <option value="amistoso" <?php if ($partido["tipo"] == "amistoso") echo "selected"; ?>>Amistoso</option>
                                     <option value="pretemporada" <?php if ($partido["tipo"] == "pretemporada") echo "selected"; ?>>Pretemporada</option>
                                     <option value="temporada" <?php if ($partido["tipo"] == "temporada") echo "selected"; ?>>Temporada</option>
@@ -311,7 +327,7 @@
                         </td>
                         <td>
                            <select id="tipo_femenino_<?php echo $contador_equipos_femenino;?>"> 
-                                <option value="no" <?php if ($partido["tipo"] == "no") echo "selected"; ?>>Descanso veraniego</option>
+                                <option value="no" <?php if ($partido["tipo"] == "no") echo "selected"; ?>>Sin tipo</option>
                                 <option value="amistoso" <?php if ($partido["tipo"] == "amistoso") echo "selected"; ?>>Amistoso</option>
                                 <option value="pretemporada" <?php if ($partido["tipo"] == "pretemporada") echo "selected"; ?>>Pretemporada</option>
                                 <option value="temporada" <?php if ($partido["tipo"] == "temporada") echo "selected"; ?>>Temporada</option>
@@ -347,6 +363,10 @@
 </div>
 
 <div class="clr"></div>
+
+<button id="temporada_ver_xml_mas" type="button" onclick="window.open('http://castraservilia.com/android/xml/historicoTemporadaMasculino.xml')" target="_blank">Ver el xml masculino</button>
+<button id="temporada_ver_xml_fem" type="button" onclick="window.open('http://castraservilia.com/android/xml/historicoTemporadaFemenino.xml')" target="_blank">Ver el xml femenino</button>
+<button id="temporada_generar_xml" type="button">Generar el xml</button>
 
 
 <?php include ('footer.php'); ?>

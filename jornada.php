@@ -123,6 +123,22 @@
 						}
 					});
 				});
+                                
+                                $('#jornada_generar_xml').click(function(){  
+                                    
+                                        jQuery.post("procesar.php", {                         		                                                
+                                                
+                                                pagina:"xml",
+                                                accion:"generar_jornada_completa",
+					}, function(data, textStatus){
+						if(data == 1){
+                                                        alert("XML actualizado");							
+						}
+						else{
+							alert("ERROR mientras se creaba el XML");                                                        
+						}
+					});
+                                });
 			});
 		</script>
     
@@ -275,5 +291,8 @@
 <div class="clr"></div>
 
 <button id="boton_guardar_nombres_equipos" type="button">Guardar</button>
+<button id="jornada_ver_xml_mas" type="button" onclick="window.open('http://castraservilia.com/android/xml/jornadaCompletaMasculino.xml')" target="_blank">Ver el xml masculino</button>
+<button id="jornada_ver_xml_fem" type="button" onclick="window.open('http://castraservilia.com/android/xml/jornadaCompletaFemenino.xml')" target="_blank">Ver el xml femenino</button>
+<button id="jornada_generar_xml" type="button">Generar el xml</button>
 
 <?php include ('footer.php'); ?>

@@ -30,6 +30,7 @@
                                                 equipos_liga_f:$('#opciones_equipos_liga_femenino').val(),
                                                                                                 		                                                
                                                 pagina:"index.php",
+                                                accion:"editar",
 					}, function(data, textStatus){
 						if(data == 1){
                                                         alert("Modificación correcta");
@@ -40,6 +41,22 @@
 						}
 					});
 				});
+                                
+                                $('#index_generar_xml').click(function(){  
+                                    
+                                        jQuery.post("procesar.php", {                         		                                                
+                                                
+                                                pagina:"xml",
+                                                accion:"generar_opciones",
+					}, function(data, textStatus){
+						if(data == 1){
+                                                        alert("XML actualizado");							
+						}
+						else{
+							alert("ERROR mientras se creaba el XML");                                                        
+						}
+					});
+                                });
 			});
 		</script>
                 
@@ -156,5 +173,6 @@
 <div class="clr"></div>
 
 <button id="boton_guardar_opciones" type="button">Modificar</button>
-
+<button id="index_ver_xml" type="button" onclick="window.open('http://castraservilia.com/android/xml/inicioyopciones.xml')" target="_blank">Ver el xml</button>
+<button id="index_generar_xml" type="button">Generar el xml</button>
 <?php include ('footer.php'); ?>

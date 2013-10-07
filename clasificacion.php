@@ -148,6 +148,22 @@
 						}
 					});
 				});
+                                
+                                $('#clasificacion_generar_xml').click(function(){  
+                                    
+                                        jQuery.post("procesar.php", {                         		                                                
+                                                
+                                                pagina:"xml",
+                                                accion:"generar_clasificacion",
+					}, function(data, textStatus){
+						if(data == 1){
+                                                        alert("XML actualizado");							
+						}
+						else{
+							alert("ERROR mientras se creaba el XML");                                                        
+						}
+					});
+                                });
 			});
 		</script>
     
@@ -335,5 +351,8 @@
 <div class="clr"></div>
 
 <button id="boton_guardar_clasificacion" type="button">Guardar</button>
+<button id="clasificacion_ver_xml_mas" type="button" onclick="window.open('http://castraservilia.com/android/xml/clasificacionMasculino.xml')" target="_blank">Ver el xml masculino</button>
+<button id="clasificacion_ver_xml_fem" type="button" onclick="window.open('http://castraservilia.com/android/xml/clasificacionFemenino.xml')" target="_blank">Ver el xml femenino</button>
+<button id="clasificacion_generar_xml" type="button">Generar el xml</button>
 
 <?php include ('footer.php'); ?>
