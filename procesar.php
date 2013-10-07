@@ -421,7 +421,7 @@ include("conexion.php");
             fwrite($fp,$xml->asXML());
             fclose($fp);
 
-            $res = mysql_query("SELECT * FROM historicoTemporadaFemenino ORDER BY ID ASC", $db);
+            $res = mysql_query("SELECT * FROM historicoTemporadaFemenino ORDER BY ID ASC");
             $xml = new SimpleXMLElement('<xml/>');
 
             $contador = 1;
